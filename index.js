@@ -67,9 +67,10 @@ class App extends React.Component {
 
       // Se o botão "%" é clicado
       case value === "%":
-          currentNumber = eval(currentNumber) / 100;
-          operatorFlag = false;
-          break;
+      currentNumber = (parseFloat(currentNumber) / 100).toString();
+      operatorFlag = false;
+      this.setState({dotFlag:true});
+      break;
 
       // Se o botão "." é clicado
       case value === ".":
@@ -209,4 +210,3 @@ class Equals extends React.Component{
 
 // Renderizando o componente App no root do HTML
 render(<App />, document.getElementById('root'));
-
